@@ -344,11 +344,11 @@ def main():
 
     win = GraphWin("Future Value Calculator", 320, 240)
     win.setBackground("white")
-    Text(Point(20, 230), 'O.OK').draw(win)
-    Text(Point(20, 180), '2.5K').draw(win)
-    Text(Point(20, 30), '10.0K').draw(win)
-    Text(Point(20, 130), '5.0K').draw(win)
-    Text(Point(20, 80), '7.5K').draw(win)
+    Text(Point(20, 230), ' O.OK').draw(win)
+    Text(Point(20, 180), ' 2.5K').draw(win)
+    Text(Point(20, 30),  '10.0K').draw(win)
+    Text(Point(20, 130), ' 5.0K').draw(win)
+    Text(Point(20, 80),  ' 7.5K').draw(win)
 
     # Draw bar for initial principal
     height = principal * 0.02
