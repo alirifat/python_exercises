@@ -105,7 +105,6 @@ print('Time left {0:02}:{1:05.2f}'.format(1, 37.374))
 # thus, it doesn't have any item with index of 1.
 # print('{1:3}'.format('14'))
 
-
 # 5.
 
 
