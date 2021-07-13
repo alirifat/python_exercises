@@ -102,7 +102,7 @@ class ShotTracker:
 
     def get_x(self):
         """ Return the current x coordinate of the shot's center """
-        return self.proj.get_y()
+        return self.proj.get_x()
 
     def get_y(self):
         """ Return the current y coordinate of the shot's center """
@@ -194,4 +194,6 @@ def main():
             update(50)
 
     win.close()
+
+
 main()
