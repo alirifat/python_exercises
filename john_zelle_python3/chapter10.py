@@ -46,28 +46,28 @@
 # d) An accessor helps to access instance variables.
 # e) A mutator manipulates the instance variables.
 
-# 3.
-class Bozo:
-
-    def __init__(self, value):
-        print('Creating a Bozo from:', value)
-        self.value = 2 * value
-
-    def clown(self, x):
-        print('Clowning:', x)
-        print(x * self.value)
-        return x + self.value
-
-
-def main():
-    print('Clowning around now.')
-    c1 = Bozo(3)
-    c2 = Bozo(4)
-    print(c1.clown(3))
-    print(c2.clown(c1.clown(2)))
-
-
-main()
+# # 3.
+# class Bozo:
+#
+#     def __init__(self, value):
+#         print('Creating a Bozo from:', value)
+#         self.value = 2 * value
+#
+#     def clown(self, x):
+#         print('Clowning:', x)
+#         print(x * self.value)
+#         return x + self.value
+#
+#
+# def main():
+#     print('Clowning around now.')
+#     c1 = Bozo(3)
+#     c2 = Bozo(4)
+#     print(c1.clown(3))
+#     print(c2.clown(c1.clown(2)))
+#
+#
+# main()
 
 # Programming Exercises
 # # 1.
@@ -749,5 +749,772 @@ main()
 #
 #
 # main()
+#
+# # 5.
+# class Student:
+#
+#     def __init__(self):
+#         self.credits = 0
+#         self.qpoints = 0
+#
+#     def get_hours(self):
+#         return self.credits
+#
+#     def get_qpoints(self):
+#         return self.qpoints
+#
+#     def add_grade(self, grade_point, credit_taken):
+#         self.qpoints += float(grade_point) * float(credit_taken)
+#         self.credits += float(credit_taken)
+#
+#     def gpa(self):
+#         return self.qpoints / self.credits
+#
+#
+# def main():
+#     new_student = Student()
+#     while True:
+#         grade_point = input('Please! Enter the grade point (e.g. 3.75) [Press <Enter> to quit]: ')
+#
+#         if grade_point == '':
+#             break
+#
+#         credit_taken = input(
+#             'Please! Enter the number of credit hours for the class (e.g. 3) [Press <Enter> to quit]: ')
+#
+#         new_student.add_grade(grade_point, credit_taken)
+#
+#     print('The student has {0:0.2f} GPA.'.format(new_student.gpa()))
+#
+#
+# main()
+#
+# # 6.
+# class Student:
+#
+#     def __init__(self):
+#         self.credits = 0
+#         self.qpoints = 0
+#
+#     def get_hours(self):
+#         return self.credits
+#
+#     def get_qpoints(self):
+#         return self.qpoints
+#
+#     def add_grade(self, grade_point, credit_taken):
+#         self.qpoints += float(grade_point) * float(credit_taken)
+#         self.credits += float(credit_taken)
+#
+#     def add_letter_grade(self, grade_letter, credit_taken):
+#         if grade_letter == 'A+' or grade_letter == 'A':
+#             grade_point = 4
+#         elif grade_letter == 'A-':
+#             grade_point = 3.7
+#         elif grade_letter == 'B+':
+#             grade_point = 3.3
+#         elif grade_letter == 'B':
+#             grade_point = 3
+#         elif grade_letter == 'B-':
+#             grade_point = 2.7
+#         elif grade_letter == 'C+':
+#             grade_point = 2.3
+#         elif grade_letter == 'C':
+#             grade_point = 2
+#         elif grade_letter == 'C-':
+#             grade_point = 1.7
+#         elif grade_letter == 'D+':
+#             grade_point = 1.3
+#         elif grade_letter == 'D':
+#             grade_point = 1
+#         elif grade_letter == 'E' or grade_letter == 'F':
+#             grade_point = 0
+#         else:
+#             print('Please! Enter a valid grade.')
+#             return -1
+#
+#         self.add_grade(grade_point, credit_taken)
+#
+#     def gpa(self):
+#         return self.qpoints / self.credits
+#
+#
+# def main():
+#     new_student = Student()
+#     user_response = input('Would you like to enter grade in (1) points or (2) letters [Press <Enter> to quit]: ')
+#     while True:
+#         if user_response == '1':
+#             while True:
+#                 grade_point = input('Please! Enter the grade point (e.g. 3.75) [Press <Enter> to quit]: ')
+#                 if grade_point == '':
+#                     break
+#                 credit_taken = input(
+#                     'Please! Enter the number of credit hours for the class (e.g. 3): ')
+#                 new_student.add_grade(grade_point, credit_taken)
+#             break
+#         elif user_response == '2':
+#             while True:
+#                 grade_letter = input('Please! Enter the grade letter (e.g. A-) [Press <Enter> to quit]: ')
+#                 if grade_letter == '':
+#                     break
+#                 credit_taken = input(
+#                     'Please! Enter the number of credit hours for the class (e.g. 3): ')
+#                 new_student.add_letter_grade(grade_letter, credit_taken)
+#             break
+#         elif user_response == '':
+#             break
+#         else:
+#             user_response = input('Please! Enter a valid option (1) point; (2) letter [Press <Enter> to quit]: ')
+#
+#     print('The student has {0:0.2f} GPA.'.format(new_student.gpa()))
+#
+#
+# main()
 
-# 5.
+# 7.
+# See roller_circle_buttons.py
+
+# 8.
+# See roller_color_dice.py
+#
+# # 9.
+# from math import pi
+# class Sphere:
+#
+#     def __init__(self, radius):
+#         self.radius = radius
+#
+#     def get_radius(self):
+#         return self.radius
+#
+#     def surface_area(self):
+#         return 4 * pi * self.radius ** 2
+#
+#     def volume(self):
+#         return (4 / 3) * pi * self.radius ** 3
+#
+#
+# s1 = Sphere(5)
+# print(s1.surface_area())
+# print(s1.volume())
+
+# # 10.
+# class Cube:
+#
+#     def __init__(self, side_length):
+#         self.side_length = side_length
+#
+#     def get_side_length(self):
+#         return self.side_length
+#
+#     def surface_area(self):
+#         return 6 * self.side_length ** 2
+#
+#     def volume(self):
+#         return self.side_length ** 3
+#
+#
+# c1 = Cube(3)
+# print(c1.surface_area())
+# print(c1.volume())
+#
+# # 11.
+# from random import randint, choice
+#
+# class PlayingCard:
+#
+#     def __init__(self, rank, suit):
+#         self.rank = rank
+#         self.suit = suit
+#
+#     def __str__(self):
+#         if self.rank == 1:
+#             rank_string = 'Ace'
+#         elif self.rank == 11:
+#             rank_string = 'Jack'
+#         elif self.rank == 12:
+#             rank_string = 'Queen'
+#         elif self.rank == 13:
+#             rank_string = 'King'
+#         else:
+#             rank_string = self.rank
+#
+#         if self.suit == 's':
+#             suit_string = 'Spades'
+#         elif self.suit == 'h':
+#             suit_string = 'Hearts'
+#         elif self.suit == 'c':
+#             suit_string = 'Clubs'
+#         elif self.suit == 'd':
+#             suit_string = 'Diamonds'
+#
+#         return '{0} of {1}'.format(rank_string, suit_string)
+#
+#     def get_rank(self):
+#         return self.rank
+#
+#     def get_suit(self):
+#         return self.suit
+#
+#     def value(self):
+#         if self.rank > 10:
+#             return 10
+#         else:
+#             return self.get_rank()
+#
+#
+# def main():
+#     n = int(input('Please! Enter the number of cards to be generated randomly: '))
+#     for i in range(n):
+#         rank = randint(1, 13)
+#         suit = choice(['s', 'd', 'c', 'h'])
+#         card = PlayingCard(rank, suit)
+#         print(card)
+#
+#
+# main()
+#
+# # 12.
+# from graphics import *
+# from random import randint, choice
+#
+# class Button:
+#     """A button is a labeled rectangle in a window .
+#     It is activated or deactivated with the activate()
+#     and deactivate() methods. The clicked (p) method
+#     returns true if the button is active and p is inside it."""
+#
+#     def __init__(self, win, center, width, height, label):
+#         """ Creates a rectangular button, eg:
+#         qb = Button(my_win, center_point, width, height, 'Quit') """
+#
+#         w, h = width / 2.0, height / 2.0
+#         x, y = center.getX(), center.getY()
+#         self.x_max, self.x_min = x + w, x - w
+#         self.y_max, self.y_min = y + h, y - h
+#         p1 = Point(self.x_min, self.y_min)
+#         p2 = Point(self.x_max, self.y_max)
+#         self.rect = Rectangle(p1, p2)
+#         self.rect.setFill('lightgray')
+#         self.rect.draw(win)
+#         self.label = Text(center, label)
+#         self.label.draw(win)
+#         self.deactivate()
+#
+#     def clicked(self, p):
+#         """ Returns True if button active and p is inside """
+#         return self.active and self.x_min <= p.getX() <= self.x_max and self.y_min <= p.getY() <= self.y_max
+#
+#     def get_label(self):
+#         """ Returns the label string of this button. """
+#         return self.label.getText()
+#
+#     def activate(self):
+#         """ Sets this button to 'active'. """
+#         self.label.setFill('black')
+#         self.rect.setWidth(2)
+#         self.active = True
+#
+#     def deactivate(self):
+#         """ Sets this button to 'inactive'. """
+#         self.label.setFill('darkgrey')
+#         self.rect.setWidth(1)
+#         self.active = False
+#
+#
+# class PlayingCard:
+#
+#     def __init__(self, rank, suit):
+#         self.rank = rank
+#         self.suit = suit
+#
+#     def __str__(self):
+#         if self.rank == 1:
+#             rank_string = 'Ace'
+#         elif self.rank == 11:
+#             rank_string = 'Jack'
+#         elif self.rank == 12:
+#             rank_string = 'Queen'
+#         elif self.rank == 13:
+#             rank_string = 'King'
+#         else:
+#             rank_string = self.rank
+#
+#         if self.suit == 's':
+#             suit_string = 'Spades'
+#         elif self.suit == 'h':
+#             suit_string = 'Hearts'
+#         elif self.suit == 'c':
+#             suit_string = 'Clubs'
+#         elif self.suit == 'd':
+#             suit_string = 'Diamonds'
+#
+#         return '{0} of {1}'.format(rank_string, suit_string)
+#
+#     def get_rank(self):
+#         return self.rank
+#
+#     def get_suit(self):
+#         return self.suit
+#
+#     def value(self):
+#         if self.rank > 10:
+#             return 10
+#         else:
+#             return self.get_rank()
+#
+#
+# def main():
+#     win = GraphWin('Playing Cards!', 1024, 780)
+#     win.setCoords(0, -12, 32, 12)
+#
+#     draw_button = Button(win, Point(16, -2), 8, 2, 'Draw!')
+#     quit_button = Button(win, Point(16, -8), 2, 1, 'Quit')
+#
+#     draw_button.activate()
+#     quit_button.activate()
+#
+#     while True:
+#         pt = win.getMouse()
+#
+#         if draw_button.clicked(pt):
+#
+#             cards = []
+#             while len(set(cards)) != 5:
+#                 rank = randint(1, 13)
+#                 suit = choice(['s', 'd', 'c', 'h'])
+#                 card = PlayingCard(rank, suit)
+#                 cards.append(card)
+#
+#             filenames = ['{0}_resized.png'.format(card.__str__().replace(' ', '_')).lower() for card in cards]
+#
+#             anchor_points = list(range(8, 25, 4))
+#             for idx, anchor_point in enumerate(anchor_points):
+#                 im = Image(Point(anchor_point, 5), 'playing_cards/{0}'.format(filenames[idx]))
+#                 im.draw(win)
+#
+#         if quit_button.clicked(pt):
+#             return
+#
+#
+# main()
+#
+# # 13.
+# from graphics import *
+# from cbutton import CButton
+#
+# class Face:
+#
+#     def __init__(self, window, center, size):
+#         self.window = window
+#         self.center = center
+#         self.size = size
+#         self.head = Circle(self.center, self.size)
+#         self.eye_size = 0.15 * self.size
+#         self.eye_off = self.size / 3.0
+#         self.mouth_size = 0.8 * self.size
+#         self.mouth_off = self.size / 2.0
+#         self.left_eye = None
+#         self.right_eye = None
+#         p1 = self.center.clone()
+#         p2 = self.center.clone()
+#         p1.move(-self.mouth_size / 2, self.mouth_off)
+#         p2.move(self.mouth_size / 2, self.mouth_off)
+#         self.left_edge_mouth = p1
+#         self.right_edge_mouth = p2
+#         self.mouth = None
+#
+#     def _draw_head(self):
+#         self.head.draw(self.window)
+#
+#     def _open_left_eye(self):
+#         self.left_eye = Circle(self.center, self.eye_size)
+#         self.left_eye.move(-self.eye_off, -self.eye_off)
+#         self.left_eye.draw(self.window)
+#
+#     def _open_right_eye(self):
+#         self.right_eye = Circle(self.center, self.eye_size)
+#         self.right_eye.move(self.eye_off, -self.eye_off)
+#         self.right_eye.draw(self.window)
+#
+#     def _draw_flat_mouth(self):
+#         self.mouth = Line(self.left_edge_mouth, self.right_edge_mouth)
+#         self.mouth.draw(self.window)
+#
+#     def _draw_smiling_mouth(self):  # TODO
+#         # use Polygon
+#         left_x, left_y = self.left_edge_mouth.getX(), self.left_edge_mouth.getY()
+#         right_x, right_y = self.right_edge_mouth.getX(), self.right_edge_mouth.getY()
+#         middle_x = int((left_x + right_x) / 2)
+#         middle_y = int((left_y + right_y) / 2)
+#         offset = self.size * 0.15
+#         points = [Point(left_x, left_y),
+#                   Point((left_x + middle_x) / 2, left_y + offset / 2),
+#                   Point(middle_x, middle_y + offset * 0.75),
+#                   Point((middle_x + right_x) / 2, right_y + offset / 2),
+#                   Point(right_x, right_y)]
+#         self.mouth = Polygon(points)
+#         self.mouth.draw(self.window)
+#
+#     def _draw_winking_mouth(self):  # TODO
+#         left_x, left_y = self.left_edge_mouth.getX(), self.left_edge_mouth.getY()
+#         right_x, right_y = self.right_edge_mouth.getX(), self.right_edge_mouth.getY()
+#         middle_x = int((left_x + right_x) / 2)
+#         middle_y = int((left_y + right_y) / 2)
+#         offset = self.size * 0.20
+#         points = [Point(left_x, left_y),
+#                   Point((left_x + middle_x) / 2, left_y + offset / 2),
+#                   Point(middle_x, middle_y + offset * 0.75),
+#                   Point((middle_x + right_x) / 2, right_y + offset / 2),
+#                   Point(right_x, right_y - offset * 0.6),
+#                   Point((middle_x + right_x) / 2, right_y - offset * 0.45),
+#                   Point(middle_x, middle_y - offset * 0.2),
+#                   Point((left_x + middle_x) / 2, left_y - offset * 0.1)]
+#         self.mouth = Polygon(points)
+#         self.mouth.draw(self.window)
+#
+#     def smile(self):
+#         self._remove_face()
+#         self._draw_head()
+#         self._open_left_eye()
+#         self._open_right_eye()
+#         self._draw_smiling_mouth()
+#
+#     def _wink_eye(self):
+#         if self.right_eye is not None:
+#             self.right_eye.undraw()
+#             p = self.right_eye.getCenter()
+#             x, y = p.getX(), p.getY()
+#         else:  # first time drawing the eye
+#             p = self.center.clone()
+#             p.move(self.eye_off, -self.eye_off)
+#             x, y = p.getX(), p.getY()
+#
+#         self.right_eye = Line(Point(x - self.eye_size, y), Point(x + self.eye_size, y))
+#         self.right_eye.draw(self.window)
+#
+#     def _draw_flinch_eyes(self):
+#         if self.left_eye is not None: self.left_eye.undraw()
+#         if self.right_eye is not None: self.right_eye.undraw()
+#         p1 = self.center.clone()
+#         p2 = self.center.clone()
+#         p1.move(-self.eye_off, -self.eye_off)
+#         p2.move(self.eye_off, -self.eye_off)
+#         left_x, left_y = p1.getX(), p1.getY()
+#         right_x, right_y = p2.getX(), p2.getY()
+#         offset = self.size * 0.05
+#         self.left_eye = Line(Point(left_x - self.eye_size, left_y - offset),
+#                              Point(left_x + self.eye_size, left_y + offset))
+#         self.right_eye = Line(Point(right_x - self.eye_size, right_y + offset),
+#                               Point(right_x + self.eye_size, right_y - offset))
+#         self.left_eye.draw(self.window)
+#         self.right_eye.draw(self.window)
+#
+#     def wink(self):
+#         self._remove_face()
+#         self._draw_head()
+#         self._open_left_eye()
+#         self._wink_eye()
+#         self._draw_winking_mouth()
+#
+#     def flinch(self):
+#         self._remove_face()
+#         self._draw_head()
+#         self._draw_flinch_eyes()
+#         self._draw_flat_mouth()
+#
+#     def _remove_face(self):
+#         self.head.undraw()
+#         if self.left_eye is not None:
+#             self.left_eye.undraw()
+#         if self.right_eye is not None:
+#             self.right_eye.undraw()
+#         if self.mouth is not None:
+#             self.mouth.undraw()
+#
+#
+# def main():
+#     width = 1024
+#     height = 768
+#     win = GraphWin('Faces!', width, height)
+#     wink_button = CButton(win, Point(60, 60), 45, 'Winky Face')
+#     smile_button = CButton(win, Point(60, 210), 45, 'Smiley Face')
+#     flinch_button = CButton(win, Point(60, 360), 45, 'Flinch Face')
+#     quit_button = CButton(win, Point(width - 50, height / 2), 20, 'Quit')
+#
+#     wink_button.activate()
+#     smile_button.activate()
+#     flinch_button.activate()
+#     quit_button.activate()
+#
+#     f1 = Face(win, Point(int(width / 2), int(height / 2)), 150)
+#
+#     while True:
+#         pt = win.getMouse()
+#         if quit_button.clicked(pt):
+#             return
+#         if wink_button.clicked(pt):
+#             f1.wink()
+#         if smile_button.clicked(pt):
+#             f1.smile()
+#         if flinch_button.clicked(pt):
+#             f1.flinch()
+#
+#
+# main()
+#
+# # 14.
+# from graphics import *
+# from cbutton import CButton
+# from random import choice
+#
+# class Face:
+#
+#     def __init__(self, window_width, window_height, center, size):
+#         self.window_width = window_width
+#         self.window_height = window_height
+#         self.window = GraphWin('Face', self.window_width, self.window_height)
+#         self.center = center
+#         self.size = size
+#         self.head = None
+#         self.eye_size = 0.15 * self.size
+#         self.eye_off = self.size / 3.0
+#         self.mouth_size = 0.8 * self.size
+#         self.mouth_off = self.size / 2.0
+#         self.left_eye = None
+#         self.right_eye = None
+#         self.mouth = None
+#
+#     def _draw_head(self):
+#         if self.head is None:
+#             self.head = Circle(self.center, self.size)
+#         else:
+#             center = self.head.getCenter()
+#             self.head = Circle(center, self.size)
+#         self.head.draw(self.window)
+#         p1 = self.head.getCenter().clone()
+#         p2 = self.head.getCenter().clone()
+#         p1.move(-self.mouth_size / 2, self.mouth_off)
+#         p2.move(self.mouth_size / 2, self.mouth_off)
+#         self.left_edge_mouth = p1
+#         self.right_edge_mouth = p2
+#
+#     def _open_left_eye(self):
+#         self.left_eye = Circle(self.head.getCenter(), self.eye_size)
+#         self.left_eye.move(-self.eye_off, -self.eye_off)
+#         self.left_eye.draw(self.window)
+#
+#     def _open_right_eye(self):
+#         self.right_eye = Circle(self.head.getCenter(), self.eye_size)
+#         self.right_eye.move(self.eye_off, -self.eye_off)
+#         self.right_eye.draw(self.window)
+#
+#     def _draw_flat_mouth(self):
+#         self.mouth = Line(self.left_edge_mouth, self.right_edge_mouth)
+#         self.mouth.draw(self.window)
+#
+#     def _draw_smiling_mouth(self):
+#         left_x, left_y = self.left_edge_mouth.getX(), self.left_edge_mouth.getY()
+#         right_x, right_y = self.right_edge_mouth.getX(), self.right_edge_mouth.getY()
+#         middle_x = int((left_x + right_x) / 2)
+#         middle_y = int((left_y + right_y) / 2)
+#         offset = self.size * 0.15
+#         points = [Point(left_x, left_y),
+#                   Point((left_x + middle_x) / 2, left_y + offset / 2),
+#                   Point(middle_x, middle_y + offset * 0.75),
+#                   Point((middle_x + right_x) / 2, right_y + offset / 2),
+#                   Point(right_x, right_y)]
+#         self.mouth = Polygon(points)
+#         self.mouth.draw(self.window)
+#
+#     def _draw_winking_mouth(self):
+#         left_x, left_y = self.left_edge_mouth.getX(), self.left_edge_mouth.getY()
+#         right_x, right_y = self.right_edge_mouth.getX(), self.right_edge_mouth.getY()
+#         middle_x = int((left_x + right_x) / 2)
+#         middle_y = int((left_y + right_y) / 2)
+#         offset = self.size * 0.20
+#         points = [Point(left_x, left_y),
+#                   Point((left_x + middle_x) / 2, left_y + offset / 2),
+#                   Point(middle_x, middle_y + offset * 0.75),
+#                   Point((middle_x + right_x) / 2, right_y + offset / 2),
+#                   Point(right_x, right_y - offset * 0.6),
+#                   Point((middle_x + right_x) / 2, right_y - offset * 0.45),
+#                   Point(middle_x, middle_y - offset * 0.2),
+#                   Point((left_x + middle_x) / 2, left_y - offset * 0.1)]
+#         self.mouth = Polygon(points)
+#         self.mouth.draw(self.window)
+#
+#     def _remove_face(self):
+#         if self.head is not None:
+#             self.head.undraw()
+#         if self.left_eye is not None:
+#             self.left_eye.undraw()
+#         if self.right_eye is not None:
+#             self.right_eye.undraw()
+#         if self.mouth is not None:
+#             self.mouth.undraw()
+#
+#     def _wink_eye(self):
+#         if self.right_eye is not None:
+#             self.right_eye.undraw()
+#             p = self.right_eye.getCenter()
+#             x, y = p.getX(), p.getY()
+#         else:  # first time drawing the eye
+#             p = self.center.clone()
+#             p.move(self.eye_off, -self.eye_off)
+#             x, y = p.getX(), p.getY()
+#
+#         self.right_eye = Line(Point(x - self.eye_size, y), Point(x + self.eye_size, y))
+#         self.right_eye.draw(self.window)
+#
+#     def _draw_flinch_eyes(self):
+#         if self.left_eye is not None: self.left_eye.undraw()
+#         if self.right_eye is not None: self.right_eye.undraw()
+#         p1 = self.head.getCenter().clone()
+#         p2 = self.head.getCenter().clone()
+#         p1.move(-self.eye_off, -self.eye_off)
+#         p2.move(self.eye_off, -self.eye_off)
+#         left_x, left_y = p1.getX(), p1.getY()
+#         right_x, right_y = p2.getX(), p2.getY()
+#         offset = self.size * 0.05
+#         self.left_eye = Line(Point(left_x - self.eye_size, left_y - offset),
+#                              Point(left_x + self.eye_size, left_y + offset))
+#         self.right_eye = Line(Point(right_x - self.eye_size, right_y + offset),
+#                               Point(right_x + self.eye_size, right_y - offset))
+#         self.left_eye.draw(self.window)
+#         self.right_eye.draw(self.window)
+#
+#     def _get_x_y(self):
+#         p = self.head.getCenter()
+#         x = p.getX()
+#         y = p.getY()
+#         return x, y
+#
+#     def _beyond_right(self):
+#         x, y = self._get_x_y()
+#         return x + self.size > self.window_width
+#
+#     def _beyond_bottom(self):
+#         x, y = self._get_x_y()
+#         return y + self.size > self.window_height
+#
+#     def _away_left(self):
+#         x, y = self._get_x_y()
+#         return x - self.size < 0
+#
+#     def _away_up(self):
+#         x, y = self._get_x_y()
+#         return y - self.size < 0
+#
+#     def _is_on_edge(self):
+#         x, y = self._get_x_y()
+#         if not self._beyond_right() and not self._away_up() and not self._beyond_bottom() and not self._away_left():
+#             return False
+#         return True
+#
+#     def _move(self, dx, dy):
+#         self.head.move(dx, dy)
+#         self.left_eye.move(dx, dy)
+#         self.right_eye.move(dx, dy)
+#         self.mouth.move(dx, dy)
+#
+#     def wink(self):
+#         self._remove_face()
+#         self._draw_head()
+#         self._open_left_eye()
+#         self._wink_eye()
+#         self._draw_winking_mouth()
+#
+#     def flinch(self):
+#         self._remove_face()
+#         self._draw_head()
+#         self._draw_flinch_eyes()
+#         self._draw_flat_mouth()
+#
+#     def smile(self):
+#         self._remove_face()
+#         self._draw_head()
+#         self._open_left_eye()
+#         self._open_right_eye()
+#         self._draw_smiling_mouth()
+#
+#     def move(self):
+#         dx = 1
+#         dy = 1
+#         for i in range(10000):
+#             if not self._is_on_edge():
+#                 self._move(dx, dy)
+#             else:
+#                 if self._beyond_right():
+#                     dx = -1
+#                 elif self._away_up():
+#                     dy = 1
+#                 elif self._beyond_bottom():
+#                     dy = -1
+#                 elif self._away_left():
+#                     dx = 1
+#
+#                 self._remove_face()
+#                 face_type = choice(['wink', 'smile', 'flinch'])
+#                 if face_type == 'wink':
+#                     self.wink()
+#                 elif face_type == 'smile':
+#                     self.smile()
+#                 else:
+#                     self.flinch()
+#                 self._move(dx, dy)
+#             update(100)
+#
+#
+# def main():
+#     width = 1024
+#     height = 768
+#
+#     f1 = Face(width, height, Point(int(width / 2), int(height / 2)), 150)
+#     f1.smile()
+#     f1.move()
+#
+#
+# main()
+
+# 15.
+from graphics import *
+from cannonball import ShotTracker, InputDialog
+
+def main():
+
+    # create animation window
+    win = GraphWin('Projectile Animation', 640, 480, autoflush=False)
+    win.setCoords(-10, -10, 210, 155)
+
+    # draw baseline
+    Line(Point(-10, 0), Point(210, 0)).draw(win)
+
+    # draw labeled ticks every 50 meters
+    for x in range(0, 210, 50):
+        Text(Point(x, -5), str(x)).draw(win)
+        Line(Point(x, 0), Point(x, 2)).draw(win)
+
+    # event loop, each time through fires a single shot
+    angle, vel, height = 45.0, 40.0, 2.0
+    input_win = InputDialog(angle, vel, height)
+    while True:
+        # interact with the user
+        choice = input_win.interact()
+
+        if choice == 'Quit': # loop exit
+            break
+
+        # create a shot and track until it hits ground or leaves window
+        angle, vel, height = input_win.get_values()
+        shot = ShotTracker(win, angle, vel, height)
+        while 0 <= shot.get_y() and -10 < shot.get_x() <= 210:
+            shot.update(1/50)
+            update(50)
+
+    win.close()
+
+
+main()
+
+# 16.

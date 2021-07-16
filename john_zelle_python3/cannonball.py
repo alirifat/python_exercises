@@ -194,6 +194,3 @@ def main():
             update(50)
 
     win.close()
-
-
-main()
